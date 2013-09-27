@@ -39,6 +39,14 @@ namespace Cormin.RadControlsExtensions
                 AddAjaxSetting(manager, source, targets);
             }
         }
+        
+        public static void AddAjaxSettingToSameTarget(this RadAjaxManager manager, Control target, params Control[] sources)
+        {
+            foreach (var source in sources)
+            {
+                AddAjaxSetting(manager, source, target);
+            }
+        }
 
         static bool IsControlValid(Control control)
         {
